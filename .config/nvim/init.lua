@@ -58,8 +58,6 @@ require('packer').startup(function(use)
   use 'tpope/vim-rhubarb'
   use 'lewis6991/gitsigns.nvim'
 
-  use 'navarasu/onedark.nvim' -- Theme inspired by Atom
-  use 'aktersnurra/no-clown-fiesta.nvim'
   use 'nanotech/jellybeans.vim'
 
   use 'lukas-reineke/indent-blankline.nvim'
