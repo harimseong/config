@@ -1,5 +1,4 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$PATH:$HOME/neovim/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -7,6 +6,9 @@ export ZSH="$HOME/.oh-my-zsh"
 UNAME=$(uname)
 if [[ "$UNAME" == "Darwin" ]]; then
   export PATH=$PATH:$HOME/Library/Python/3.9/bin
+  export PATH=$PATH:$HOME/neovim_macos/bin
+elif [[ "$UNAME" == "Linux" ]]; then
+  export PATH=$PATH:$HOME/neovim_linux/bin
 fi
 
 # Set name of the theme to load --- if set to "random", it will
