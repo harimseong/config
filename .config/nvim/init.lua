@@ -9,12 +9,11 @@ vim.o.expandtab = true
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-
 -- Install packer
 local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
 local is_bootstrap = false
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-   is_bootstrap = true
+  is_bootstrap = true
   vim.fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
   vim.cmd [[packadd packer.nvim]]
 end
@@ -22,7 +21,7 @@ end
 require('packer').startup(function(use)
   -- Package manager
   use 'wbthomason/packer.nvim'
-  
+
   use { -- LSP Configuration & Plugins
   'neovim/nvim-lspconfig',
   requires = {
@@ -58,8 +57,8 @@ require('packer').startup(function(use)
   use 'tpope/vim-rhubarb'
   use 'lewis6991/gitsigns.nvim'
 
-  use 'navarasu/onedark.nvim' -- Theme inspired by Atom
-  use 'aktersnurra/no-clown-fiesta.nvim'
+--  use 'navarasu/onedark.nvim' -- Theme inspired by Atom
+--  use 'aktersnurra/no-clown-fiesta.nvim'
   use 'nanotech/jellybeans.vim'
 
   use 'lukas-reineke/indent-blankline.nvim'
@@ -67,7 +66,7 @@ require('packer').startup(function(use)
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
 
   -- Fuzzy Finder (files, lsp, etc)
-  use { 'nvim-telescope/telescope.nvim', requires = { 'nvim-lua/plenary.nvim' } }
+  use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { 'nvim-lua/plenary.nvim' } }
 
   -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
   use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make', cond = vim.fn.executable 'make' == 1 }
@@ -76,9 +75,9 @@ require('packer').startup(function(use)
   use { '42Paris/42header' }
 
   -- nvim-tree
-    use { 'nvim-tree/nvim-tree.lua' }
+  use { 'nvim-tree/nvim-tree.lua' }
 
-    use {
+  use {
     'phaazon/hop.nvim',
     branch = 'v2', -- optional but strongly recommended
     config = function()
@@ -86,7 +85,7 @@ require('packer').startup(function(use)
         require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
   end
 }
-    use 'nvim-tree/nvim-web-devicons'
+  use 'nvim-tree/nvim-web-devicons'
 
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
@@ -198,7 +197,7 @@ require('Comment').setup()
 -- Enable `lukas-reineke/indent-blankline.nvim`
 -- See `:help indent_blankline.txt`
 require('ibl').setup {
-    indent = { char = '▏' },
+  indent = { char = '▏' },
 }
 
 -- Gitsigns

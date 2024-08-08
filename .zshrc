@@ -1,4 +1,16 @@
+export USER=hseong
+export MAIL=$USER@student.42seoul.kr
 
+alias nvimconfig='nvim $HOME/.config/nvim/init.lua'
+alias python='python3'
+alias gccW='gcc -Wall -Wextra -Werror'
+alias g++W='g++ -Wall -Wextra -Werror'
+alias gil='git log'
+alias gis='git status'
+
+# export DISPLAY="`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0"
+export PATH="/usr/local/go/bin/:$PATH"
+#export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH"
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -70,15 +82,16 @@ ZSH_THEME="dieter"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+# plugins=(git zsh-vi-mode)
 
 source $ZSH/oh-my-zsh.sh
+export ZVM_VI_EDITOR=/home/hseong/nvim-linux64/bin/nvim
+
+source $HOME/root_install/bin/thisroot.sh
 
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
-export USER=hseong
-export MAIL=$USER@student.42seoul.kr
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -101,11 +114,3 @@ export MAIL=$USER@student.42seoul.kr
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias nvi='nvim'
-alias nvimconfig='nvim ~/.config/nvim/init.lua'
-alias python='python3'
-alias gccW='gcc -Wall -Wextra -Werror'
-alias rmdSYM='rm -rf *.dSYM'
-alias rmswp='rm .*.swp'
-alias gis='git status'
-alias gil='git log'
