@@ -17,6 +17,7 @@ export PATH="/usr/local/go/bin/:$PATH"
 export ZSH="$HOME/.oh-my-zsh"
 
 UNAME=$(uname)
+export PATH=$PATH:$HOME/kitty/kitty/launcher
 if [[ "$UNAME" == "Darwin" ]]; then
   export PATH=$PATH:$HOME/Library/Python/3.9/bin
   export PATH=$PATH:$HOME/neovim_macos/bin
