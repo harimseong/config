@@ -21,6 +21,7 @@ export PATH=$PATH:$HOME/kitty/kitty/launcher
 if [[ "$UNAME" == "Darwin" ]]; then
   export PATH=$PATH:$HOME/Library/Python/3.9/bin
   export PATH=$PATH:$HOME/neovim_macos/bin
+  export PATH=$PATH:/opt/homebrew/bin
 elif [[ "$UNAME" == "Linux" ]]; then
   export PATH=$PATH:$HOME/neovim_linux/bin
 fi
@@ -96,7 +97,7 @@ ZSH_THEME="dieter"
 source $ZSH/oh-my-zsh.sh
 export ZVM_VI_EDITOR=/home/hseong/nvim-linux64/bin/nvim
 
-source $HOME/root_install/bin/thisroot.sh
+# source $HOME/root_install/bin/thisroot.sh
 
 # User configuration
 
