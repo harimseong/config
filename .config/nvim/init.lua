@@ -82,8 +82,10 @@ require('packer').startup(function(use)
         -- you can configure Hop the way you like here; see :h hop-config
         require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
   end
-}
+  }
   use 'nvim-tree/nvim-web-devicons'
+
+  use 'lervag/vimtex'
 
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')
@@ -95,6 +97,15 @@ require('packer').startup(function(use)
     require('packer').sync()
   end
 end)
+
+-- Viewer options: One may configure the viewer either by specifying a built-in
+-- viewer method:
+vim.g.vimtex_view_method = 'zathura'
+
+-- Or with a generic interface:
+vim.g.vimtex_view_general_viewer = 'okular'
+vim.g.vimtex_view_general_options = '--unique file:@pdf\\#src:@line@tex'
+
 
 -- When we are bootstrapping a configuration, it doesn't
 -- make sense to execute the rest of the init.lua.
@@ -415,7 +426,7 @@ require('mason').setup()
 
 -- Enable the following language servers
 -- Feel free to add/remove any LSPs that you want here. They will automatically be installed
-local servers = { 'clangd', 'rust_analyzer' } 
+local servers = { 'clangd', 'rust_analyzer', 'pylsp', 'texlab' } 
 
 -- Ensure the servers above are installed
 require('mason-lspconfig').setup {

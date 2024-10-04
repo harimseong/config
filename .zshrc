@@ -2,7 +2,6 @@ export USER=hseong
 export MAIL=$USER@student.42seoul.kr
 
 alias nvimconfig='nvim $HOME/.config/nvim/init.lua'
-alias python='python3'
 alias gccW='gcc -Wall -Wextra -Werror'
 alias g++W='g++ -Wall -Wextra -Werror'
 alias gil='git log'
@@ -19,9 +18,9 @@ export ZSH="$HOME/.oh-my-zsh"
 UNAME=$(uname)
 export PATH=$PATH:$HOME/kitty/kitty/launcher
 if [[ "$UNAME" == "Darwin" ]]; then
-  export PATH=$PATH:$HOME/Library/Python/3.9/bin
   export PATH=$PATH:$HOME/neovim_macos/bin
   export PATH=$PATH:/opt/homebrew/bin
+  export PATH=$PATH:$HOME/.local/bin
 elif [[ "$UNAME" == "Linux" ]]; then
   export PATH=$PATH:$HOME/neovim_linux/bin
 fi
