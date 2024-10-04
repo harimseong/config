@@ -57,7 +57,12 @@ require('packer').startup(function(use)
   use 'tpope/vim-rhubarb'
   use 'lewis6991/gitsigns.nvim'
 
+  -- theme
+  use 'navarasu/onedark.nvim'
   use 'nanotech/jellybeans.vim'
+  use '2giosangmitom/nightfall.nvim'
+  use 'bluz71/vim-moonfly-colors'
+
 
   use 'lukas-reineke/indent-blankline.nvim'
   use 'nvim-lualine/lualine.nvim' -- Fancier statusline
@@ -156,8 +161,9 @@ vim.wo.signcolumn = 'yes'
 
 -- Set colorscheme
 vim.o.termguicolors = true
--- vim.cmd [[colorscheme onedark]]
-vim.cmd [[colorscheme jellybeans]]
+
+-- vim.cmd [[colorscheme jellybeans]]
+vim.cmd [[colorscheme moonfly]]
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
