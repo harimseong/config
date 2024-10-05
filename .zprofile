@@ -1,41 +1,8 @@
-export USER=hseong
-export MAIL=$USER@student.42seoul.kr
-
-alias nvimconfig='nvim $HOME/.config/nvim/init.lua'
-alias gccW='gcc -Wall -Wextra -Werror'
-alias g++W='g++ -Wall -Wextra -Werror'
-alias gil='git log'
-alias gis='git status'
-
-# export DISPLAY="`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0"
-export PATH="/usr/local/go/bin/:$PATH"
-#export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH"
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-
-UNAME=$(uname)
-export PATH=$PATH:$HOME/kitty/kitty/launcher
-if [[ "$UNAME" == "Darwin" ]]; then
-  export PATH=$PATH:$HOME/neovim_macos/bin
-  export PATH=$PATH:/opt/homebrew/bin
-  export PATH=$PATH:$HOME/.local/bin
-elif [[ "$UNAME" == "Linux" ]]; then
-  export PATH=$PATH:$HOME/neovim_linux/bin
-fi
-
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="dieter"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -94,13 +61,32 @@ ZSH_THEME="dieter"
 # plugins=(git zsh-vi-mode)
 
 source $ZSH/oh-my-zsh.sh
-export ZVM_VI_EDITOR=/home/hseong/nvim-linux64/bin/nvim
-
-# source $HOME/root_install/bin/thisroot.sh
 
 # User configuration
 
-# export MANPATH="/usr/local/man:$MANPATH"
+export USER=hseong
+export MAIL=$USER@student.42seoul.kr
+export MANPATH="/usr/local/man:$MANPATH"
+export ZVM_VI_EDITOR=/home/hseong/nvim-linux64/bin/nvim
+
+export PATH="/usr/local/go/bin/:$PATH"
+# export DISPLAY="`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0"
+# export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH"
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+UNAME=$(uname)
+export PATH=$PATH:$HOME/kitty/kitty/launcher
+if [[ "$UNAME" == "Darwin" ]]; then
+  export PATH=$PATH:$HOME/neovim_macos/bin
+  export PATH=$PATH:/opt/homebrew/bin
+  export PATH=$PATH:$HOME/.local/bin
+elif [[ "$UNAME" == "Linux" ]]; then
+  export PATH=$PATH:$HOME/neovim_linux/bin
+fi
+
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -120,6 +106,15 @@ export ZVM_VI_EDITOR=/home/hseong/nvim-linux64/bin/nvim
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+alias nvimconfig='nvim $HOME/.config/nvim/init.lua'
+alias gccW='gcc -Wall -Wextra -Werror'
+alias g++W='g++ -Wall -Wextra -Werror'
+alias gil='git log'
+alias gis='git status'
+
+# ROOT
+# source $HOME/root_install/bin/thisroot.sh
+
+# Added by OrbStack: command-line tools and integration
+# Comment this line if you don't want it to be added again.
+# source ~/.orbstack/shell/init.zsh 2>/dev/null || :
