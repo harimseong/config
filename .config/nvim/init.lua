@@ -1,4 +1,4 @@
-vim.o.equalprg = 'clang-format'
+vim.o.equalprg = 'clang-format --style=file:$HOME/.config/clang-format/Mozilla-custom'
 
 vim.o.rnu = true
 vim.o.shiftwidth = 2
