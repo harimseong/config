@@ -163,6 +163,16 @@ vim.wo.signcolumn = 'yes'
 vim.o.termguicolors = true
 
 -- vim.cmd [[colorscheme jellybeans]]
+
+-- moonfly highlight color customization
+local custom_highlight = vim.api.nvim_create_augroup("CustomHighlight", {})
+vim.api.nvim_create_autocmd("ColorScheme", {
+  pattern = "moonfly",
+  callback = function()
+    vim.api.nvim_set_hl(0, "IblScope", { fg = "#949494", nocombine = true})
+  end,
+  group = custom_highlight,
+})
 vim.cmd [[colorscheme moonfly]]
 
 -- Set completeopt to have a better completion experience
