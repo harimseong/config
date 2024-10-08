@@ -106,7 +106,7 @@ BreakAfterAttributes: Leave
 BreakAfterJavaFieldAnnotations: false
 BreakAfterReturnType: TopLevel
 BreakArrays:     true
-BreakBeforeBinaryOperators: None
+BreakBeforeBinaryOperators: NonAssignment
 BreakBeforeConceptDeclarations: Always
 BreakBeforeBraces: Linux
 BreakBeforeInlineASMColon: OnlyMultiline

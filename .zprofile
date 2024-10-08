@@ -10,12 +10,11 @@ export PATH="/usr/local/go/bin/:$PATH"
 
 UNAME=$(uname)
 export PATH=$PATH:$HOME/kitty/kitty/launcher
+export PATH=$PATH:$HOME/neovim/bin
 if [[ "$UNAME" == "Darwin" ]]; then
-  export PATH=$PATH:$HOME/neovim_macos/bin
   export PATH=$PATH:/opt/homebrew/bin
   export PATH=$PATH:$HOME/.local/bin
 elif [[ "$UNAME" == "Linux" ]]; then
-  export PATH=$PATH:$HOME/neovim_linux/bin
 fi
 
 alias nvimconfig='nvim $HOME/.config/nvim/init.lua'
