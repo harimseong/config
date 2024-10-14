@@ -1,0 +1,3 @@
+#/bin/sh
+
+exec $HOME/kitty/kitty/launcher/kitty -c $HOME/.config/kitty/kitty.conf -c $HOME/.config/kitty/$(uname)_kitty.conf

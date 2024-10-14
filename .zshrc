@@ -96,14 +96,13 @@ export PATH="/usr/local/go/bin/:$PATH"
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 UNAME=$(uname)
-export PATH=$PATH:$HOME/kitty/kitty/launcher
+export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/neovim/bin
 if [[ "$UNAME" == "Darwin" ]]; then
   export PATH=$PATH:/opt/homebrew/bin
-  export PATH=$PATH:$HOME/.local/bin
 elif [[ "$UNAME" == "Linux" ]]; then
 fi
-alias kitty="kitty -c $HOME/.config/kitty/kitty.conf -c $HOME/.config/kitty/${UNAME}_kitty.conf "
+#alias kitty="kitty -c $HOME/.config/kitty/kitty.conf -c $HOME/.config/kitty/${UNAME}_kitty.conf "
 
 alias nvimconfig='nvim $HOME/.config/nvim/init.lua'
 alias gccW='gcc -Wall -Wextra -Werror'
