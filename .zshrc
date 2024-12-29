@@ -116,3 +116,7 @@ alias gis='git status'
 # Added by OrbStack: command-line tools and integration
 # Comment this line if you don't want it to be added again.
 # source ~/.orbstack/shell/init.zsh 2>/dev/null || :
+
+# ruby
+export GEM_HOME="$HOME/gems"
+export PATH="$GEM_HOME/bin:$PATH"
