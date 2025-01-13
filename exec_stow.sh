@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 UNAME=$(uname)
+HOSTNAME=$(uname -n)
 OPTIONS=""
 
 if [ "$UNAME" == "Darwin" ]; then
@@ -7,5 +8,19 @@ if [ "$UNAME" == "Darwin" ]; then
   cp .fonts/Courier\ New\ Nerd\ Font\ Complete.ttf $HOME/Library/Fonts
 fi
 
-stow --ignore=exec_stow.sh --ignore=.gitignore . 
+case $HOSTNAME in
+  "HARIM-LAPTOP")
+    echo "text_composition_strategy 1.0 0" > .config/kitty/font.conf
+    echo "font_size 17.0" >> .config/kitty/font.conf
+    echo "cell_width 96%" >> .config/kitty/font.conf
+    echo "cell_height 2px" >> .config/kitty/font.conf
+    ;;
+  "HarimBacBook.local")
+    echo "text_composition_strategy legacy" > .config/kitty/font.conf
+    echo "font_size 17.0" > .config/kitty/font.conf
+    echo "cell_width 95%" >> .config/kitty/font.conf
+    echo "cell_height 10px" >> .config/kitty/font.conf
+    ;;
+esac
 
+stow --ignore=exec_stow.sh --ignore=.gitignore . 
