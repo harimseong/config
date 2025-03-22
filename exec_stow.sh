@@ -15,7 +15,7 @@ case $HOSTNAME in
     echo "modify_font cell_width 96%" >> .config/kitty/font.conf
     echo "modify_font cell_height 2px" >> .config/kitty/font.conf
     ;;
-  "HarimBacBook.local")
+  "HarimMacBook.local")
     echo "text_composition_strategy legacy" > .config/kitty/font.conf
     echo "font_size 17.0" > .config/kitty/font.conf
     echo "modify_font cell_width 95%" >> .config/kitty/font.conf
