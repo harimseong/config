@@ -21,6 +21,12 @@ case $HOSTNAME in
     echo "modify_font cell_width 95%" >> .config/kitty/font.conf
     echo "modify_font cell_height 10px" >> .config/kitty/font.conf
     ;;
+  "Harim")
+    echo "text_composition_strategy 1.0 0" > .config/kitty/font.conf
+    echo "font_size 13.0" >> .config/kitty/font.conf
+    echo "modify_font cell_width 96%" >> .config/kitty/font.conf
+    echo "modify_font cell_height 1px" >> .config/kitty/font.conf
+    ;;
 esac
 
 stow --ignore=exec_stow.sh --ignore=.gitignore . 
