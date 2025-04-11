@@ -3,5 +3,10 @@
 # Please adapt and uncomment the following lines:
   name = Harim Seong
   email = halim9512@gmail.com
+	signingkey = /home/hseong/.ssh/id_rsa.pub
 [core]
   editor = nvim
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
