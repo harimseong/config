@@ -3,7 +3,7 @@
 # Please adapt and uncomment the following lines:
   name = Harim Seong
   email = halim9512@gmail.com
-	signingkey = /home/harim/.ssh/id_rsa.pub
+	signingkey = $HOME/.ssh/id_rsa.pub
 [core]
   editor = nvim
 [gpg]

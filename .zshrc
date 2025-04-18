@@ -1,6 +1,3 @@
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="dieter"
 
@@ -17,10 +14,10 @@ export ZSH="$HOME/.oh-my-zsh"
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
 # zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
+zstyle ':omz:update' frequency 7
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -77,38 +74,41 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-
-export USER=hseong
-export MAIL=$USER@student.42seoul.kr
-export MANPATH="/usr/local/man:$MANPATH"
-export ZVM_VI_EDITOR=/home/hseong/nvim-linux64/bin/nvim
-
-export PATH="/usr/local/go/bin/:$PATH"
-# export DISPLAY="`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0"
-# export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH"
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-UNAME=$(uname)
-export PATH=$PATH:$HOME/.local/bin
-export PATH=$PATH:$HOME/neovim/bin
-if [[ "$UNAME" == "Darwin" ]]; then
-  export PATH=$PATH:/opt/homebrew/bin
-elif [[ "$UNAME" == "Linux" ]]; then
-fi
-#alias kitty="kitty -c $HOME/.config/kitty/kitty.conf -c $HOME/.config/kitty/${UNAME}_kitty.conf "
-
 alias nvimconfig='nvim $HOME/.config/nvim/init.lua'
 alias gccW='gcc -Wall -Wextra -Werror'
 alias g++W='g++ -Wall -Wextra -Werror'
 alias gil='git log'
 alias gis='git status'
+
+# ==================== ENVVAR ====================
+
+export USER=$(basename $(echo $HOME))
+export MAIL=$USER@student.42seoul.kr
+export MANPATH="/usr/local/man:$MANPATH"
+# export DISPLAY="`grep nameserver /etc/resolv.conf | sed 's/nameserver //'`:0"
+# export LD_LIBRARY_PATH="/usr/lib/x86_64-linux-gnu:$LD_LIBRARY_PATH"
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+UNAME=$(uname)
+if [[ "$UNAME" == "Darwin" ]]; then
+  export PATH=$PATH:/opt/homebrew/bin
+elif [[ "$UNAME" == "Linux" ]]; then
+fi
+
+# ==================== PATH ====================
+
+# .local/bin
+export PATH=$PATH:$HOME/.local/bin
+
+# neovim
+export PATH=$HOME/neovim/bin:$PATH
+
+# go
+export PATH="/usr/local/go/bin/:$PATH"
+
+# ruby
+export GEM_HOME="$HOME/gems"
+export PATH="$GEM_HOME/bin:$PATH"
 
 # ROOT
 # source $HOME/root_install/bin/thisroot.sh
@@ -117,6 +117,3 @@ alias gis='git status'
 # Comment this line if you don't want it to be added again.
 # source ~/.orbstack/shell/init.zsh 2>/dev/null || :
 
-# ruby
-export GEM_HOME="$HOME/gems"
-export PATH="$GEM_HOME/bin:$PATH"

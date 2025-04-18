@@ -8,25 +8,38 @@ if [ "$UNAME" == "Darwin" ]; then
   cp .fonts/Courier\ New\ Nerd\ Font\ Complete.ttf $HOME/Library/Fonts
 fi
 
+
 case $HOSTNAME in
   "HARIM-LAPTOP")
-    echo "text_composition_strategy 1.0 0" > .config/kitty/font.conf
-    echo "font_size 17.0" >> .config/kitty/font.conf
-    echo "modify_font cell_width 96%" >> .config/kitty/font.conf
-    echo "modify_font cell_height 2px" >> .config/kitty/font.conf
+    TEXT_COMPOSITION_STRATEGY="1.0 0"
+    FONT_SIZE="17.0"
+    FONT_CELL_WIDTH="96%"
+    FONT_CELL_HEIGHT="2px"
     ;;
   "HarimMacBook.local")
-    echo "text_composition_strategy legacy" > .config/kitty/font.conf
-    echo "font_size 17.0" > .config/kitty/font.conf
-    echo "modify_font cell_width 95%" >> .config/kitty/font.conf
-    echo "modify_font cell_height 10px" >> .config/kitty/font.conf
+    TEXT_COMPOSITION_STRATEGY="legacy"
+    FONT_SIZE="17.0"
+    FONT_CELL_WIDTH="95%"
+    FONT_CELL_HEIGHT="10px"
     ;;
   "Harim")
-    echo "text_composition_strategy 1.0 0" > .config/kitty/font.conf
-    echo "font_size 13.0" >> .config/kitty/font.conf
-    echo "modify_font cell_width 96%" >> .config/kitty/font.conf
-    echo "modify_font cell_height 1px" >> .config/kitty/font.conf
+    TEXT_COMPOSITION_STRATEGY="1.0 0"
+    FONT_SIZE="13.0"
+    FONT_CELL_WIDTH="96%"
+    FONT_CELL_HEIGHT="1px"
+    ;;
+  *)
+    TEXT_COMPOSITION_STRATEGY="1.0 0"
+    FONT_SIZE="15.0"
+    FONT_CELL_WIDTH="96%"
+    FONT_CELL_HEIGHT="2px"
     ;;
 esac
+echo "text_composition_strategy $TEXT_COMPOSITION_STRATEGY" > .config/kitty/font.conf
+echo "font_size $FONT_SIZE" >> .config/kitty/font.conf
+echo "modify_font cell_width $FONT_CELL_WIDTH" >> .config/kitty/font.conf
+echo "modify_font cell_height $FONT_CELL_HEIGHT" >> .config/kitty/font.conf
 
-stow --ignore=exec_stow.sh --ignore=.gitignore . 
+envsubst < .gitconfig.template > .gitconfig
+
+stow --ignore=exec_stow.sh --ignore=.gitignore --ignore=README.md --ignore=$0 . 
