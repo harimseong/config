@@ -103,6 +103,14 @@ export PATH=$PATH:$HOME/.local/bin
 # neovim
 export PATH=$HOME/neovim/bin:$PATH
 
+# rust
+export PATH=$HOME/.cargo/bin:$PATH
+
+# python
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+
 # go
 export PATH="/usr/local/go/bin/:$PATH"
 
