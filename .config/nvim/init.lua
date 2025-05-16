@@ -8,6 +8,7 @@ vim.o.expandtab = true
 -- nvim-tree prerequisite
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+vim.g.nvim_tree_respect_buf_cwd = 1
 
 -- Install packer
 local install_path = vim.fn.stdpath 'data' .. '/site/pack/packer/start/packer.nvim'
@@ -21,6 +22,9 @@ end
 require('packer').startup(function(use)
   -- Package manager
   use 'wbthomason/packer.nvim'
+
+  -- fzf-lua
+  use 'ibhagwan/fzf-lua'
 
   use { -- LSP Configuration & Plugins
   'neovim/nvim-lspconfig',
@@ -539,6 +543,11 @@ cmp.setup {
 
 -- nvim-tree
 require("nvim-tree").setup({
+  update_cwd = true,
+  update_focused_file = {
+    enable = true,
+    update_cwd = true,
+  },
   sort_by = "case_sensitive",
   view = {
     adaptive_size = true,

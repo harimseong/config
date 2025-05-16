@@ -74,6 +74,7 @@ source $ZSH/oh-my-zsh.sh
 #   export EDITOR='mvim'
 # fi
 
+alias vim='nvim -u NORC'
 alias nvimconfig='nvim $HOME/.config/nvim/init.lua'
 alias gccW='gcc -Wall -Wextra -Werror'
 alias g++W='g++ -Wall -Wextra -Werror'
@@ -94,6 +95,8 @@ if [[ "$UNAME" == "Darwin" ]]; then
   export PATH=$PATH:/opt/homebrew/bin
 elif [[ "$UNAME" == "Linux" ]]; then
 fi
+
+export LESS="$LESS" # -N"
 
 # ==================== PATH ====================
 
